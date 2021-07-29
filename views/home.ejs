@@ -10,12 +10,14 @@
     integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
     crossorigin=""
   />
-  <link rel="stylesheet" href="style.css">
   <title>Test Practical</title>
 </head>
 <body>
-  <h1>Test Page 1</h1>
-  <div id="mapid"></div>
+  <h1>Test Practical</h1>
+  <div 
+    id="mapid"
+    style="height: 85vh;">
+  </div>
 
 <script
   src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
@@ -25,7 +27,8 @@
 
 <script>
 
-  var countMarker6 = 0;
+  var countMarker1 = 0
+  var countMarker6 = 0
 
   var mymap = L
     .map('mapid')
@@ -46,28 +49,28 @@
   var marker1 = L
     .marker([1.4812726462004457, 124.8548126220703])
     .addTo(mymap)
-    .bindPopup("<b>Hey There!</b><br>This is marker-1.");
+    .on('click', onMarker1Clicked)
 
   var marker2 = L
     .marker([1.4729763815852177, 124.8548126220703])
     .addTo(mymap)
-    .bindPopup("<b>Hey There!</b><br>This is marker-2.");
+    .bindPopup("<b>Hey There!</b><br>This is marker-2.")
 
   var marker3 = L
     .marker([1.4812726462004457, 124.86099243164062])
     .addTo(mymap)
-    .bindPopup("<b>Hey There!</b><br>This is marker-3.");
+    .bindPopup("<b>Hey There!</b><br>This is marker-3.")
 
   var marker4 = L
     .marker([1.4729763815852177, 124.86099243164062])
     .addTo(mymap)
-    .bindPopup("<b>Hey There!</b><br>This is marker-4.");
+    .bindPopup("<b>Hey There!</b><br>This is marker-4.")
 
 
   var marker5 = L
     .marker([1.4812726462004457, 124.86717224121094])
     .addTo(mymap)
-    .bindPopup("<b>Hey There!</b><br>This is marker-5.");
+    .bindPopup("<b>Hey There!</b><br>This is marker-5.")
 
   var marker6 = L
     .marker([1.4729763815852177, 124.86717224121094])
@@ -75,7 +78,11 @@
     .on('click', onMarker6Clicked)
 
 
-  function onMarker6Clicked(e) {
+  function onMarker1Clicked() {
+    marker1.bindPopup(`You clicked marker-1: ${countMarker1++} times`)
+  }
+
+  function onMarker6Clicked() {
     marker6.bindPopup(`You clicked marker-6: ${countMarker6++} times`)
   }
 

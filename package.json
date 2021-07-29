@@ -19,6 +19,7 @@
   "homepage": "https://github.com/billybep/test-bvt#readme",
   "dependencies": {
     "ejs": "^3.1.6",
+    "express": "^4.17.1",
     "leaflet": "^1.7.1"
   }
 }
