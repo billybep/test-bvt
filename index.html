@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link 
+    rel="stylesheet" 
+    href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+    integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+    crossorigin=""
+  />
+  <link rel="stylesheet" href="style.css">
+  <title>Test Practical</title>
+</head>
+<body>
+  <h1>Test Page 1</h1>
+  <div id="mapid"></div>
+
+<script
+  src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+  integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+  crossorigin="">
+</script>
+
+<script>
+
+  var countMarker6 = 0;
+
+  var mymap = L
+    .map('mapid')
+    .setView([
+      1.4745800796222255,
+      124.83695983886719
+    ], 13);
+
+  L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
+    attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+    maxZoom: 18,
+    id: 'mapbox/streets-v11',
+    tileSize: 512,
+    zoomOffset: -1,
+    accessToken: 'pk.eyJ1IjoiYmlsbHliZXAiLCJhIjoiY2tyb2gwdXkyOGUwOTJvcGE3M3NpcjF1NiJ9.1W3mFb2BVDrr69ooaaimCQ'
+  }).addTo(mymap);
+
+  var marker1 = L
+    .marker([1.4812726462004457, 124.8548126220703])
+    .addTo(mymap)
+    .bindPopup("<b>Hey There!</b><br>This is marker-1.");
+
+  var marker2 = L
+    .marker([1.4729763815852177, 124.8548126220703])
+    .addTo(mymap)
+    .bindPopup("<b>Hey There!</b><br>This is marker-2.");
+
+  var marker3 = L
+    .marker([1.4812726462004457, 124.86099243164062])
+    .addTo(mymap)
+    .bindPopup("<b>Hey There!</b><br>This is marker-3.");
+
+  var marker4 = L
+    .marker([1.4729763815852177, 124.86099243164062])
+    .addTo(mymap)
+    .bindPopup("<b>Hey There!</b><br>This is marker-4.");
+
+
+  var marker5 = L
+    .marker([1.4812726462004457, 124.86717224121094])
+    .addTo(mymap)
+    .bindPopup("<b>Hey There!</b><br>This is marker-5.");
+
+  var marker6 = L
+    .marker([1.4729763815852177, 124.86717224121094])
+    .addTo(mymap) 
+    .on('click', onMarker6Clicked)
+
+
+  function onMarker6Clicked(e) {
+    marker6.bindPopup(`You clicked marker-6: ${countMarker6++} times`)
+  }
+
+</script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+{
+  "name": "test-bvt",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/billybep/test-bvt.git"
+  },
+  "keywords": [],
+  "author": "billybep",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/billybep/test-bvt/issues"
+  },
+  "homepage": "https://github.com/billybep/test-bvt#readme",
+  "dependencies": {
+    "ejs": "^3.1.6",
+    "leaflet": "^1.7.1"
+  }
+}
